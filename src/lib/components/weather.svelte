@@ -1,6 +1,5 @@
 <script>
     import { onMount } from 'svelte'; 
-    import { PUBLIC_API_KEY } from '$env/static/public';
 
     let city = 'Utrecht';
     let weather;
@@ -8,7 +7,7 @@
 
     async function getWeather() {
         const res = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${PUBLIC_API_KEY}&lang=nl&units=metric`
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=52d2a223715e49a67159446b130d4482&lang=nl&units=metric`
         );
 
         if (!res.ok) {
