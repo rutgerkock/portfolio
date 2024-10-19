@@ -40,7 +40,7 @@
 
     <section class="img_section">
         <enhanced:img 
-            src="/img/main_img.jpg" 
+            src="/Users/rutgerkock/Documents/GitHub/portfolio/static/img/main_img.jpg" 
             alt="Een prachtige Porsche 930 turbo in het grijs met een zwart interieur."
             loading="eager"
         />
