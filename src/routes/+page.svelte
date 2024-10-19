@@ -39,10 +39,10 @@
     </section>
 
     <section class="img_section">
-        <enhanced:img 
-            src="/Users/rutgerkock/Documents/GitHub/portfolio/static/img/main_img.jpg" 
+        <img 
+            loading="lazy"
+            src="/img/main_img.jpg" 
             alt="Een prachtige Porsche 930 turbo in het grijs met een zwart interieur."
-            loading="eager"
         />
     </section>
 </main>
