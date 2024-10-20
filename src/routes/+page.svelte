@@ -1,23 +1,17 @@
 <script>
     import Menu from '$lib/components/Menu.svelte';
-    
-    let menuOpen = false;
-
-    function toggleMenu() {
-        menuOpen = !menuOpen;
-    }
 </script>
 
-<main>
-    <section>
-        <h1 class="top">Rutger</h1>
-        <img 
-            class="top main_image"
-            loading="lazy"
-            src="/img/main_img.jpg" 
-            alt="Een prachtige Porsche 930 turbo in het grijs met een zwart interieur."
-        />
-    </section>
+<main class="grid-layout">
+
+    <h1 class="top">Rutger</h1>
+
+    <img 
+        class="main_image"
+        loading="lazy"
+        src="/img/main_img.jpg" 
+        alt="Een prachtige Porsche 930 turbo in het grijs met een zwart interieur."
+    />
 
     <p class="description">
         Front-end developer & designer in 
@@ -26,15 +20,8 @@
     </p>
 
     <section class="buttons">
-        <a href="mailto:kock.rutger@gmail.com" class="email" aria-label="Send Email">
-            <img src="/mail.svg" alt="Email Icon"/>
-        </a>
-        <button class={`menu ${menuOpen ? 'open' : ''}`} aria-label="Open Menu" on:click={toggleMenu}>
-            <span>{menuOpen ? 'Close' : 'Menu'}</span>
-        </button>       
+        <Menu />
     </section>
-
-    <Menu {menuOpen} {toggleMenu} />
 </main>
 
 <style>
@@ -43,96 +30,81 @@
         white-space: pre-line;
     }
 
-    main {
-        display: flex;
-        flex-direction: column;
-        height: 100vh; 
+    main.grid-layout {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            ". title title title title"
+            ". image image image image"
+            "description description description description description"
+            "menu menu menu menu menu";
     }
 
-    /* Top Section */
+    /* Layout */
     .top {
-        margin-left: var(--padding-8);
-        width: calc(100% - var(--padding-8)); 
+        grid-area: title;
+        margin-top: var(--padding-4); 
+        display: flex;
+        flex-direction: row;
     }
 
     .main_image {
+        grid-area: image;
+        margin-top: var(--padding-1);
         height: auto; 
-        object-fit: cover;
-        padding-top: var(--padding-2);
-        max-width: 27rem;
         max-height: 45vh;
+        width: 100%;
+        object-fit: cover;
     }
 
-    /* Description */
     .description {
-        padding-top: var(--padding-2);
+        grid-area: description;
         padding-left: var(--padding-2);
+        padding-top: var(--padding-2);
     }
 
-    /* Buttons Section */
     .buttons {
-        position: absolute;
-        bottom: var(--padding-2);
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%; 
-        height: 3rem;
+        grid-area: menu;
     }
 
-    /* Menu and Email Styles */
-    .menu, .email {
-        height: 3.25rem;
-        background-color: var(--blue);
-        color: var(--light);
-        transition: background-color 0.2s ease, transform 0.1s ease;
-        cursor: pointer; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-decoration: none; 
-        border: none;
-        border-bottom: .25rem solid var(--light-blue);
-        display: flex; 
-        align-items: center; 
-        font-size: var(--font-regular);
-        position: relative; 
-    }
+    /* Media Queries */
+    @media (min-width: 768px) {
+        main {
+            height: calc(100% - var(--padding-4) * 2);
+        }
 
-    .menu {
-        width: calc(100% - var(--padding-8));
-        padding: var(--padding-2);
-    }
+        main.grid-layout {
+            padding: var(--padding-2);
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 3fr 1fr;
+            grid-template-areas: 
+                "title image"
+                "description image"
+                "desktop image"
+                "menu image";
+        }
 
-    .email {
-        width: 3.25rem; 
-        padding: 0;
-        justify-content: center; 
-        margin-left: var(--padding-2);
-    }
+        .top, .main_image {
+            margin: 0;
 
-    /* Menu Icon */
-    .menu::after {
-        content: '';
-        position: absolute;
-        right: 1rem; 
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1rem; 
-        height: 1rem;
-        background-color: var(--light);
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        transition: transform 0.3s ease;
-    }
+        }
 
-    .menu.open::after {
-        transform: translateY(-50%) rotate(180deg);
-    }
+        .main_image {
+            height: 100%;
+            max-width: none;
+            max-height: none;
+        }
 
-    /* Button Active State */
-    .menu:active, .email:active {
-        transform: translateY(0.15rem); 
-        border-left: 0rem solid var(--light-blue); 
-        border-bottom: 0rem solid var(--light-blue); 
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); 
+        .description {
+            display: flex;
+            align-items: flex-end;
+            grid-area: description;
+            padding-left: 0;
+            padding-top: 0;
+        }
     }
 </style>

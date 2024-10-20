@@ -29,9 +29,3 @@
 {:else}
     <p>. . .</p>
 {/if}
-
-<style>
-    p {
-        color: var(--light);
-    }
-</style>

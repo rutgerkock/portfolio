@@ -18,8 +18,3 @@
 
 <p>{currentTime}</p>
 
-<style>
-    p {
-        color: var(--light);
-    }
-</style>
