@@ -65,7 +65,7 @@
 
     /* Description */
     .description {
-        padding-top: 7vh;
+        padding-top: var(--padding-2);
         padding-left: var(--padding-2);
     }
 
