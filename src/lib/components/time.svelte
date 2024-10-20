@@ -21,6 +21,5 @@
 <style>
     p {
         color: var(--light);
-        font-weight: var(--font-semibold);
     }
 </style>

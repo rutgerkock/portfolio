@@ -25,7 +25,7 @@
 </script>
 
 {#if weather}
-    <p>{temp.toFixed(1) + '°C'}</p>
+    <p>{temp.toFixed(0) + '°C'}</p>
 {:else}
     <p>. . .</p>
 {/if}
@@ -33,6 +33,5 @@
 <style>
     p {
         color: var(--light);
-        font-weight: var(--font-semibold);
     }
 </style>
