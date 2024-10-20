@@ -61,7 +61,7 @@
         object-fit: cover;
         padding-top: var(--padding-2);
         max-width: 27rem;
-        max-height: 55vh;
+        max-height: 45vh;
     }
 
     /* Description */
