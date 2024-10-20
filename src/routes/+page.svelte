@@ -46,7 +46,6 @@
     main {
         display: flex;
         flex-direction: column;
-        justify-content: space-between; 
         height: 100vh; 
     }
 
@@ -66,7 +65,7 @@
 
     /* Description */
     .description {
-        padding-bottom: 14vh;
+        padding-top: 7vh;
         padding-left: var(--padding-2);
     }
 
