@@ -47,7 +47,7 @@
     </text>
     <text 
         x="300" 
-        y="325" 
+        y="330" 
         text-anchor="middle" 
         dominant-baseline="middle"
         font-size="24" 
