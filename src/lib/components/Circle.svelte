@@ -1,6 +1,6 @@
 <script>
     import Time from './Time.svelte'; 
-    
+
     let percentage = 0; 
     let currentTime = ''; 
 
