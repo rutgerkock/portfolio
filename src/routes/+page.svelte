@@ -7,7 +7,6 @@
 <main>
     <Circle />
     <Date />
-
 </main>
 
 <style>
