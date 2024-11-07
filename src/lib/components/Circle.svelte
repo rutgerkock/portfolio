@@ -1,20 +1,20 @@
 <script>
-    import Time from '$lib/components/time.svelte';
+    import Time from '$lib/components/Time.svelte';
 
-    let percentage = 0; 
-    let currentTime = ''; 
+    let percentage = 0;
+    let currentTime = '';
 
-    const outerRadius = 295; 
-    const innerRadius = 145; 
-    const fillRadius = (outerRadius + innerRadius) / 2; 
-    const fillCircumference = 2 * Math.PI * fillRadius; 
+    const outerRadius = 295;
+    const innerRadius = 145;
+    const fillRadius = (outerRadius + innerRadius) / 2;
+    const fillCircumference = 2 * Math.PI * fillRadius;
 
     function updatePercentage(newPercentage) {
-        percentage = newPercentage; 
-        fillOffset = fillCircumference * (1 - (percentage / 100)); 
+        percentage = newPercentage;
+        fillOffset = fillCircumference * (1 - (percentage / 100));
     }
 
-    let fillOffset = fillCircumference; 
+    let fillOffset = fillCircumference;
 </script>
 
 <Time {updatePercentage} bind:currentTime />
@@ -57,7 +57,3 @@
         Utrecht, NL
     </text>
 </svg>
-
-<style>
-
-</style>
