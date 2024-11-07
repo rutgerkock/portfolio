@@ -14,4 +14,4 @@
     });
 </script>
 
-<p>{currentMonthYear}</p>
+<h2>{currentMonthYear}</h2>

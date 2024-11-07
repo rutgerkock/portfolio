@@ -20,13 +20,12 @@
 <Time {updatePercentage} bind:currentTime />
 
 <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="300" cy="300" r={outerRadius} stroke="var(--highlight)" stroke-width="10" />
-    <circle cx="300" cy="300" r={innerRadius} stroke="var(--highlight)" stroke-width="10" />
+    <circle cx="300" cy="300" r={outerRadius} stroke-width="10" />
+    <circle cx="300" cy="300" r={innerRadius} stroke-width="10" />
     <circle 
         cx="300" 
         cy="300" 
         r={fillRadius}
-        stroke="var(--highlight)"
         stroke-width={outerRadius - innerRadius}
         stroke-dasharray={fillCircumference} 
         stroke-dashoffset={fillOffset}
@@ -40,9 +39,8 @@
         dominant-baseline="middle"
         font-size="48" 
         font-family="raleway"
-        font-weight="600"
-        letter-spacing="2"
-        fill="var(--text)">
+        font-weight="700"
+        letter-spacing="2">
         {currentTime}
     </text>
     <text 
@@ -52,8 +50,17 @@
         dominant-baseline="middle"
         font-size="24" 
         font-family="raleway"
-        font-weight="300"
-        fill="var(--text)">
+        font-weight="300">        
         Utrecht, NL
     </text>
 </svg>
+
+<style>
+    svg {
+        position: absolute;
+        right: -12vw;
+        margin-top: 22rem;
+        width: 40vw;
+        height: 40vw;
+    }
+</style>

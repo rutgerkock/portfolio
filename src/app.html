@@ -25,6 +25,9 @@
     html {
         height: 100%;
         width: 100%;
+		scroll-behavior: smooth;
+		scroll-padding-top: 5rem;
+		overflow-x: hidden;
     }
 
     :root {
@@ -32,39 +35,32 @@
         --background: #EBEDEA;
         --highlight: #1E7F6D;
 
+		--text-dark: #EBEDEA;
+		--background-dark: #3F3F3F;
+		--highlight-dark: #21C6A9;
+
         --font: raleway, sans-serif;
 
-        --font-semibold: 600;
-        --font-medium: 500;
+        --bold: 700;
+        --medium: 500;
+		--light: 200;
 
-        --font-huge: 12rem;
-        --font-title: 4.5rem;
-        --font-regular: 1.1rem;
-        --font-buttons: 2.25rem;
+		--text-regular: 1.1rem;
+		--text-larger: 1.25rem;
+		--text-big: 1.5rem;
 
-        --font-line-spacing-regular: 1.75rem;
-        --font-line-spacing-big: 2.25rem;
+		--title-regular: 3.75rem;
+		--title-big: 10rem;
 
-        --padding-8: 4.5rem;
-        --padding-6: 3rem;
-        --padding-4: 2.5rem;
-        --padding-3: 2rem;
-        --padding-2: 1.25rem;
-        --padding-1: .5rem;
+		--padding-5: 5.5rem;
+        --padding-4: 4.5rem;
+        --padding-3: 2.5rem;
+        --padding-2: 1rem;
+		--padding-1: 0.5rem;
 
-        --border-radius-01: 1rem;
-        --border-radius-02: 0.5rem;
+        --border-radius-1: 0.625rem;
         
-        --transition-03: 0.3s cubic-bezier(0, 0.55, 0.45, 1);
-    }
-
-    /* Dark Mode */
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --text: #EBEDEA;
-            --background: #3F3F3F;
-            --highlight: #21C6A9;
-        }
+        --transition-250: 250ms cubic-bezier(0, 0.55, 0.45, 1);
     }
 
     main {
@@ -77,10 +73,59 @@
         font-family: raleway;
     }
 
-    @media (min-width: 768px) {
-        :root {
-            --font-title: 6rem;
-            --font-regular: 1.25rem;
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		letter-spacing: 1px;
+		line-height: 1.6rem;
+		font-weight: var(--light);
+		font-size: var(--text-big);
+	}
+
+	h1 {
+		font-size: var(--title-big);
+		color: var(--highlight);
+	}
+
+	h2 {
+		font-size: var(--title-regular);
+	}
+
+	svg circle {
+        stroke: var(--highlight);
+    }
+
+	svg text {
+		fill: var(--text);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		main {
+        	background-color: var(--background-dark);
+			color: var(--text-dark);
+    	}
+
+		h1, h2, h3, p, a, text {
+			color: var(--text-dark);
+		}
+
+		svg circle {
+            stroke: var(--highlight-dark);
         }
+
+        svg text {
+            fill: var(--text-dark);
+        }
+
+		h1 {
+			color: var(--highlight-dark);
+		}
+
+    }
+
+    @media (min-width: 768px) {
+
     }
 </style>
