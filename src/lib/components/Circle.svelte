@@ -21,7 +21,7 @@
     $: fillOffset = fillCircumference * (1 - $percentage / 100);
 </script>
 
-<Time {updatePercentage} formatType="noSeconds" bind:currentTime />
+<Time {updatePercentage} bind:currentTime />
 
 <button popovertarget="my-popover">
     <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@
             font-family="raleway"
             font-weight="700"
             letter-spacing="2">
-            {currentTime}
+            {currentTime.slice(0, 5)}
         </text>
         <text 
             class="text-1"
