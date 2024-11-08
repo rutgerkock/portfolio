@@ -23,7 +23,7 @@
 
 <Time {updatePercentage} bind:currentTime />
 
-<button popovertarget="my-popover">
+<button popovertarget="my-popover" aria-label="Fullscreen klok">
     <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="300" cy="300" r={outerRadius} stroke-width="10" />
         <circle cx="300" cy="300" r={innerRadius} stroke-width="10" />
@@ -73,7 +73,7 @@
     </svg>
 </button>
 
-<button popover id="my-popover" popovertarget="my-popover">
+<button popover id="my-popover" popovertarget="my-popover" aria-label="Fullscreen klok">
     <div>
         <ul>
             <li><h3><Date formatType="fullDate"/></h3></li>

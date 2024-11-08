@@ -15,6 +15,10 @@
             const month = String(now.getMonth() + 1).padStart(2, '0');
             const year = now.getFullYear();
             return `${day}/${month}/${year}`;
+        } else if (formatType === 'dayMonth') {
+            const day = String(now.getDate()).padStart(2);
+            const month = now.toLocaleString('default', { month: 'long' });
+            return `${day} ${month}`;
         }
     }
 

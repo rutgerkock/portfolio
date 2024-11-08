@@ -2,6 +2,8 @@
     import Circle from '../lib/components/Circle.svelte';
     import Date from '../lib/components/Date.svelte';
     import Nav from '../lib/components/Nav.svelte';
+    import Project from '../lib/components/Project.svelte';
+    import Footer from '../lib/components/Footer.svelte';
 </script>
 
 <Nav />
@@ -29,10 +31,87 @@
     <Circle />
     <section class="projects" id="werk">
         <h2>Projecten</h2>
+        <ul>
+            <Project 
+                title="Project 1" 
+                location="Location 1" 
+                date="01/20" 
+                link="#/1" 
+            />
+            <Project 
+                title="Project 2" 
+                location="Location 2" 
+                date="02/20" 
+                link="#/2" 
+            />
+            <Project 
+                title="Project 3" 
+                location="Location 3" 
+                date="03/20" 
+                link="#/3" 
+            />
+            <Project 
+                title="Project 4" 
+                location="Location 4" 
+                date="01/20" 
+                link="#/4" 
+            />
+            <Project 
+                title="Project 5" 
+                location="Location 5" 
+                date="05/20" 
+                link="#/5" 
+            />
+            <Project 
+                title="Project 6" 
+                location="Location 6" 
+                date="06/20" 
+                link="#/6" 
+            />
+            <Project 
+                title="Project 7" 
+                location="Location 7" 
+                date="07/20" 
+                link="#/7" 
+            />
+            <Project 
+                title="Project 8" 
+                location="Location 8" 
+                date="08/20" 
+                link="#/8" 
+            />
+            <Project 
+                title="Project 9" 
+                location="Location 9" 
+                date="09/20" 
+                link="#/9" 
+            />
+            <Project 
+                title="Project 10" 
+                location="Location 10" 
+                date="10/20" 
+                link="#/10" 
+            />
+        </ul>        
     </section>
     <section class="calender">
         <h2><Date formatType="monthYear"/></h2>
     </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <div>
+            <p>Een project in gedachte?</p>
+            <p>Behoefte aan een website?</p>
+            <p>Een auto die op de foto mag?</p>
+        </div>
+        <ul>
+            <li><a href="mailto:kock.rutger@gmail.com">kock.rutger@gmail.com</a></li>
+            <li><a href="tel:(+31) 06 15471956">(+31) 06 15471956</a></li>
+            <li><a href="LinkedIn">LinkedIn</a></li>
+        </ul>
+    </section>
+    <Footer />
 </main>
 
 <style>
@@ -40,18 +119,23 @@ main {
         display: grid;
         height: 100%;
         width: 100vw;
+        background-image: url(./footer_normal.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100% 25rem;
         padding: 0 var(--padding-4);
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1fr 2fr 1fr; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr; 
         grid-template-areas: 
         "left ."
         "projects calender"
-        "footer footer";
+        "footer contact"
     }
 
     .title { grid-area: title; }
     .projects { grid-area: projects; }
     .calender { grid-area: calender; }
+    .contact { grid-area: contact; }
 
     section {
         margin-bottom: var(--padding-5);
@@ -92,6 +176,8 @@ main {
     .projects {
         position: relative;
         padding-left: var(--padding-2);
+        width: 40rem;
+        padding-bottom: var(--padding-1);
     }
 
     .projects::after, .calender::after {
@@ -106,22 +192,70 @@ main {
         border-radius: var(--border-radius-1);
     }
 
+    .projects h2 {
+        margin-bottom: var(--padding-1);
+    }
+
     .calender {
         position: relative;
         padding-left: var(--padding-2);
         align-self: end;
     }
 
+    .contact {
+        position: relative;
+        padding-left: var(--padding-2);
+        align-self: end;
+        margin-bottom: var(--padding-3);
+    }
+
+    .contact::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: .5rem;
+        background: var(--background);
+        pointer-events: none;
+        border-radius: var(--border-radius-1);
+    }
+    
+    .contact a, .contact p, .contact {
+        color: var(--text-dark);
+    }
+
+    .contact a {
+        letter-spacing: 1px;
+		line-height: 1.6rem;
+		font-weight: var(--light);
+		font-size: var(--text-big);
+    }
+
+    .contact h2 {
+        margin-bottom: var(--padding-2);
+        color: var(--background);
+    }
+
+    .contact p:last-of-type {
+        margin-bottom: var(--padding-3);
+    }
+
+    .contact ul li{
+        text-decoration: underline;
+        padding-bottom: var(--padding-2);
+        font-style: italic;
+    }
+
     @keyframes grow {
-    0% {
-        width: 0;
-    }
+        0% {
+            width: 0;
+        }
 
-    100% {
-        width: 100;
-
+        100% {
+            width: 100;
+        }
     }
-}
 
     @media (prefers-color-scheme: dark) {
         .projects::after, .calender::after {
@@ -131,6 +265,21 @@ main {
         .title p::after {
             background-color: var(--background);
         }
-    }
 
+        .contact::after {
+            background: var(--background-dark);
+        }
+
+        .contact a, .contact p, .contact {
+            color: var(--text);
+        }
+
+        .contact h2 {
+            color: var(--background-dark);
+        }
+
+        main {
+            background-image: url(./footer.svg);
+        }
+    }
 </style>
