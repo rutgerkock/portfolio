@@ -1,7 +1,7 @@
 <script>
     import Time from './time.svelte';
     import Date from './Date.svelte';
-    import Weather from './Weather.svelte';
+    import Weather from './weather.svelte';
 
     import { tweened } from 'svelte/motion';
     import { cubicOut } from 'svelte/easing';
