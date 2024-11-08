@@ -119,7 +119,7 @@ main {
         display: grid;
         height: 100%;
         width: 100vw;
-        background-image: url(./footer_normal.svg);
+        background-image: url(/static/footer_normal.svg);
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: 100% 25rem;
@@ -279,7 +279,7 @@ main {
         }
 
         main {
-            background-image: url(./footer.svg);
+            background-image: url(/static/footer.svg);
         }
     }
 </style>
