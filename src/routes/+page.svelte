@@ -31,12 +31,12 @@
         <h2>Projecten</h2>
     </section>
     <section class="calender">
-        <Date />
+        <h2><Date formatType="monthYear"/></h2>
     </section>
 </main>
 
 <style>
-    main {
+main {
         display: grid;
         height: 100%;
         width: 100vw;
@@ -58,11 +58,25 @@
     }
 
     .title p { 
-        margin-top: -1.5rem; 
+        margin-top: -2rem; 
         letter-spacing: 0;
         font-size: var(--text-regular);
-        text-decoration: underline;
+        position: relative;
+        width: min-content;
+        text-wrap: nowrap;
     }
+
+    .title p::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 1px;
+        width: 100%;
+        height: 1px;
+        background-color: var(--background-dark);
+        animation: grow var(--transition-600) forwards;
+    }
+
     .title h1 { 
         margin-left: -.77rem; 
     }
@@ -98,9 +112,24 @@
         align-self: end;
     }
 
+    @keyframes grow {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100;
+
+    }
+}
+
     @media (prefers-color-scheme: dark) {
         .projects::after, .calender::after {
             background: var(--highlight-dark);
+        }
+
+        .title p::after {
+            background-color: var(--background);
         }
     }
 

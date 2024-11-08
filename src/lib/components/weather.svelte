@@ -25,7 +25,6 @@
 </script>
 
 {#if weather}
-    <p>{temp.toFixed(0) + '°C'}</p>
-{:else}
-    <p>. . .</p>
-{/if}
+    {weather.main.temp.toFixed(0)}°C /
+    {weather.weather && weather.weather.length > 0 ? weather.weather[0].description : ''}
+{/if}   

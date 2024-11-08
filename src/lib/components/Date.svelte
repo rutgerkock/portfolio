@@ -1,17 +1,24 @@
 <script>
-    import { onMount } from 'svelte';
-    let currentMonthYear = '';
+    export let formatType = 'fullDate'; 
 
-    function formatMonthYear() {
+    let currentDate = '';
+
+    function formatDate(formatType) {
         const now = new Date();
-        const month = now.toLocaleString('default', { month: 'long' });
-        const year = now.getFullYear().toString().slice(-2);
-        currentMonthYear = `${month} '${year}`;
+        
+        if (formatType === 'monthYear') {
+            const month = now.toLocaleString('default', { month: 'long' });
+            const year = now.getFullYear().toString().slice(-2);
+            return `${month} '${year}`;
+        } else if (formatType === 'fullDate') {
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
     }
 
-    onMount(() => {
-        formatMonthYear();
-    });
+    $: currentDate = formatDate(formatType);
 </script>
 
-<h2>{currentMonthYear}</h2>
+{currentDate}
