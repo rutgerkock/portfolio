@@ -6,7 +6,7 @@
 
     function updateTime() {
         const now = new Date();
-        currentTime = now.toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        currentTime = now.toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit' });
 
 
         const totalMinutesInDay = 24 * 60; 

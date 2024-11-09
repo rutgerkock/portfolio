@@ -8,9 +8,13 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
     %sveltekit.head%
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Coda:wght@400;800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <title>Rutger Kock</title>
 </head>
 <body data-sveltekit-preload-data="hover">
@@ -30,24 +34,21 @@
         width: 100%;
 		scroll-behavior: smooth;
 		scroll-padding-top: 5rem;
-		overflow-x: hidden;
 		background-color: var(--background);
+		overflow: hidden;
     }
 
     :root {
-        --text: #001514;
-        --background: #EBEDEA;
+        --dark: #001514;
+        --light: #fff;
         --highlight: #1E7F6D;
 
-		--text-dark: #EBEDEA;
-		--background-dark: #3F3F3F;
-		--highlight-dark: #21C6A9;
+        --font-text: "Bebas Neue", sans-serif;
+		--font-title: "Coda", system-ui;
 
-        --font: raleway, sans-serif;
-
-        --bold: 700;
+        --bold: 800;
         --medium: 500;
-		--light: 200;
+		--thin: 200;
 
 		--text-regular: 1.1rem;
 		--text-larger: 1.25rem;
@@ -55,28 +56,28 @@
 
 		--title-small: 2rem;
 		--title-regular: 3.75rem;
-		--title-big: 10rem;
+		--title-big: 12rem;
 
 		--padding-5: 5.5rem;
         --padding-4: 4.5rem;
-        --padding-3: 2.5rem;
+        --padding-3: 1.5rem;
         --padding-2: 1rem;
 		--padding-1: 0.5rem;
-
-        --border-radius-1: 0.625rem;
-        
-        --transition-250: 250ms cubic-bezier(0, 0.55, 0.45, 1);
-		--transition-600: 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
     }
 
     main {
-        background-color: var(--background);
+        background-color: var(--highlight);
+		width: 100vw;
+		height: 100vh;
         color: var(--text);
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
     }
 
-    h1, h2, h3, p, a, text {
-        color: var(--text);
-        font-family: raleway;
+	p, a {
+        color: var(--light);
+        font-family: var(--font-text);
     }
 
 	a {
@@ -91,12 +92,22 @@
 	}
 
 	h1 {
-		font-size: var(--title-big);
-		color: var(--highlight);
+		font-family: var(--font-title);
+		font-size: calc(13.3vw);
+		font-weight: var(--bold);
+		color: var(--light);
+		text-align: center;
+		transform: scaleY(2) translateY(25%);
+		z-index: 998;
 	}
+
 
 	h2 {
 		font-size: var(--title-regular);
+		font-family: var(--font-title);
+		font-weight: var(--bold);
+		color: var(--light);
+		text-align: center;
 	}
 
 	h3 {
@@ -106,41 +117,6 @@
 	li {
 		list-style: none;
 	}
-
-	svg circle {
-        stroke: var(--highlight);
-    }
-
-	svg text {
-		fill: var(--text);
-	}
-
-	@media (prefers-color-scheme: dark) {
-		main {
-        	background-color: var(--background-dark);
-			color: var(--text-dark);
-    	}
-
-		html {
-			background-color: var(--background-dark);
-		}
-
-		h1, h2, h3, p, a, text {
-			color: var(--text-dark);
-		}
-
-		svg circle {
-            stroke: var(--highlight-dark);
-        }
-
-        svg text {
-            fill: var(--text-dark);
-        }
-
-		h1 {
-			color: var(--highlight-dark);
-		}
-    }
 
     @media (min-width: 768px) {
 
