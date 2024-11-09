@@ -30,20 +30,19 @@
     $: timeX = centerX + (outerRadius - inwardFactor) * Math.cos(0);
     $: timeY = centerY + (outerRadius - inwardFactor) * Math.sin(0);
 
-    $: textOffsetY = 15;  
+    $: textOffsetY = 18;  
     $: textOffsetX = 60;  
 </script>
 
 <Time {updatePercentage} bind:currentTime />
 
-<svg width="90vw" height="90vw" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
     <circle
         cx={centerX}
         cy={centerY}
         r={outerRadius}
         fill="none"
         stroke="#3F3F3F"
-        stroke-width="8"
         stroke-dasharray={outerCircumference}
         stroke-dashoffset={outerStrokeOffset}
     />
@@ -54,7 +53,6 @@
         r={innerRadius}
         fill="none"
         stroke="#3F3F3F"
-        stroke-width="8"
         stroke-dasharray={innerCircumference}
         stroke-dashoffset={innerStrokeOffset}
     />
@@ -65,7 +63,6 @@
         x2={centerX + (innerRadius - inwardFactor + lengthFactor) * Math.cos(angle)}
         y2={centerY + (innerRadius - inwardFactor + lengthFactor) * Math.sin(angle)}
         stroke="#3F3F3F"
-        stroke-width="8"
     />
 
     <line
@@ -74,14 +71,12 @@
         x2={centerX + (innerRadius - inwardFactor + lengthFactor) * Math.cos(0)}
         y2={centerY + (innerRadius - inwardFactor + lengthFactor) * Math.sin(0)}
         stroke="#3F3F3F"
-        stroke-width="8"
     />
 
     <text
         x={timeX - textOffsetX}
         y={timeY - textOffsetY}
         fill= "#ffffff"
-        font-size="20"
         font-family="Bebas Neue, sans-serif"
         text-anchor="middle"
         alignment-baseline="middle">
@@ -93,15 +88,20 @@
 <style>
     svg {
         position: fixed;
-        bottom: -42vw;
+        bottom: 0;
         right: 0;
         z-index: 997;
+    }
+
+    line, circle {
+        stroke-width: 8;
     }
 
     text {
         opacity: 0; 
         animation: reveal 1s .4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         text-wrap: nowrap;
+        font-size: 2rem;
     }
 
     @keyframes reveal {
@@ -118,4 +118,19 @@
             transform: translateY(0);
         }
     }
+
+    @media (min-width: 768px) {
+        text {
+            opacity: 0; 
+            animation: reveal 1s .4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            text-wrap: nowrap;
+            font-size: 1.25rem;
+        }
+        svg {
+            bottom: -42vw;
+            width: 90vw;
+            height: 90vw;
+        }
+    }   
+
 </style>
