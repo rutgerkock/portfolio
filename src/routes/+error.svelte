@@ -6,7 +6,7 @@
     <section>
         <h2>Er gaat iets mis :&#40;</h2>
         <p>{$page.status}: {$page.error.message}</p>
-        <a href="/">&rarr; Terug naar de Home</a>
+        <a href="/">&rarr; Terug naar home</a>
     </section>
 </main>
 
