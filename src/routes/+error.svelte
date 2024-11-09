@@ -17,6 +17,8 @@
         justify-content: center;
         align-items: center;
         padding: var(--padding-1);
+        width: 100vw;
+        height: 100vh;
     }
 
     a {
