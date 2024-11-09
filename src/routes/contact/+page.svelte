@@ -23,11 +23,11 @@
                     Verder ook enthousiast over luchtgekoelde Porsches.
                 </p>
             </li>
-            <li><a href="mailto:kock.rutger@gmail.com" target="_blank">kock.rutger@gmail.com</a></li>
-            <li><a href="tel:+31 06 15471956" target="_blank">(+31) 06 15471956</a></li>
-            <li><a href="https://www.linkedin.com/in/rutger-kock-4069b2337" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/rutgerkock" target="_blank">GitHub</a></li>
-            <li><a href="https://www.google.com/maps/dir/?api=1&destination=utrecht" target="_blank">Utrecht, NL</a></li>
+            <li class="list"><a href="mailto:kock.rutger@gmail.com" target="_blank">kock.rutger@gmail.com</a></li>
+            <li class="list"><a href="tel:+31 06 15471956" target="_blank">(+31) 06 15471956</a></li>
+            <li class="list"><a href="https://www.linkedin.com/in/rutger-kock-4069b2337" target="_blank">LinkedIn</a></li>
+            <li class="list"><a href="https://github.com/rutgerkock" target="_blank">GitHub</a></li>
+            <li class="list"><a href="https://www.google.com/maps/dir/?api=1&destination=utrecht" target="_blank">Utrecht, NL</a></li>
         </ul>
     </section>
 </main>
@@ -69,7 +69,34 @@
     .contactList li:nth-child(3) { animation-delay: 0.55s; }
     .contactList li:nth-child(4) { animation-delay: 0.6s; }
     .contactList li:nth-child(5) { animation-delay: 0.65s; }
-    .contactList li:nth-child(6) { animation-delay: 0.7s; }
+    .contactList li:nth-child(6) { animation-delay: 0.7s; }    
+    
+    
+    .list a{
+        position: relative;
+        transition: padding-left 0.3s ease;
+    }
+
+    .list a:hover {
+        padding-left: var(--padding-2);
+    }
+
+    .list a::after {
+        content: '';
+        position: absolute;
+        bottom: var(--padding-1);
+        left: var(--padding-2);
+        width: calc(100% - (var(--padding-2)));
+        height: 3px; 
+        background-color: var(--light); 
+        transform: scaleX(0); 
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+    }
+    .list a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left; 
+    }
 
     @keyframes reveal {
         0% {
