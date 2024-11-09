@@ -20,11 +20,11 @@
         width: 100vw;
         height: 100vh;
         opacity: 0;
-        animation: reveal 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        animation: reveal 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     }
 
     h2, p, a {
-        animation: reveal 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        animation: reveal 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         opacity: 0;
     }
 

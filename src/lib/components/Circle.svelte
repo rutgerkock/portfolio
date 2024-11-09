@@ -1,14 +1,26 @@
 <script>
     import Time from './time.svelte';
-
     import { tweened } from 'svelte/motion';
     import { cubicOut } from 'svelte/easing';
 
-    let percentage = tweened(50, { duration: 1000, easing: cubicOut });
+    export let main = false;  // Controls text visibility and animation
+
+    let percentage;
+
+    $: if (main) {
+        if (!percentage) {
+            percentage = tweened(50, { duration: 1000, easing: cubicOut });
+        }
+    } else {
+        percentage = tweened(50, { duration: 0, easing: cubicOut });
+    }
+
     let currentTime = '';
 
     function updatePercentage(newPercentage) {
-        percentage.set((newPercentage / 2) + 50); 
+        if (percentage) {
+            percentage.set((newPercentage / 2) + 50); 
+        }
     }
 
     const outerRadius = 260;
@@ -36,7 +48,7 @@
 
 <Time {updatePercentage} bind:currentTime />
 
-<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" class:inactive={!main}>
     <circle
         cx={centerX}
         cy={centerY}
@@ -73,17 +85,18 @@
         stroke="#3F3F3F"
     />
 
-    <text
-        x={timeX - textOffsetX}
-        y={timeY - textOffsetY}
-        fill= "#ffffff"
-        font-family="Bebas Neue, sans-serif"
-        text-anchor="middle"
-        alignment-baseline="middle">
-        {currentTime}
-    </text>
+    {#if main}
+        <text
+            x={timeX - textOffsetX}
+            y={timeY - textOffsetY}
+            fill="#ffffff"
+            font-family="Bebas Neue, sans-serif"
+            text-anchor="middle"
+            alignment-baseline="middle">
+            {currentTime}
+        </text>
+    {/if}
 </svg>
-
 
 <style>
     svg {
@@ -91,6 +104,12 @@
         bottom: 0;
         right: 0;
         z-index: 997;
+        width: 375px;
+        height: 375px;
+    }
+
+    .inactive {
+        animation: inactiveMobile 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     }
 
     line, circle {
@@ -119,6 +138,34 @@
         }
     }
 
+    @keyframes inactiveMobile {
+        0% {
+
+        } 
+        100% {
+            width: 375px;
+            height: 375px;
+            bottom: -20vh;
+            right: -25vh;
+            rotate: -90deg;
+        }
+    }
+
+    @keyframes inactiveDesktop {
+        0% {
+            bottom: -42vw;
+            width: 90vw;
+            height: 90vw;
+        } 
+        100% {
+            right: -25vw;
+            top: 0;
+            width: 100vh;
+            height: 100vh;
+            rotate: -90deg;
+        }
+    }
+
     @media (min-width: 768px) {
         text {
             opacity: 0; 
@@ -126,11 +173,15 @@
             text-wrap: nowrap;
             font-size: 1.25rem;
         }
+
         svg {
             bottom: -42vw;
             width: 90vw;
             height: 90vw;
         }
-    }   
 
+        .inactive {
+            animation: inactiveDesktop 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        }   
+    }   
 </style>
