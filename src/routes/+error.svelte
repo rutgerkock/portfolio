@@ -19,12 +19,22 @@
         padding: var(--padding-1);
         width: 100vw;
         height: 100vh;
+        opacity: 0;
+        animation: reveal 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    }
+
+    h2, p, a {
+        animation: reveal 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        opacity: 0;
+    }
+
+    p {
+        margin-bottom: var(--padding-4);
     }
 
     a {
         position: relative;
         font-size: var(--text-big);
-        margin-top: var(--padding-4);
         padding: var(--padding-1);
         border: 1px solid var(--light);
         border-radius: 10px;
@@ -36,4 +46,14 @@
     a:hover {
         transform: scale(1.05); 
     }
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
 </style>
