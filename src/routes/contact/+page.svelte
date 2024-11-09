@@ -65,12 +65,12 @@
         margin-bottom: var(--padding-35); 
         display: none;
     }
+
     .contactList li:nth-child(2) { animation-delay: 0.5s; }
     .contactList li:nth-child(3) { animation-delay: 0.55s; }
     .contactList li:nth-child(4) { animation-delay: 0.6s; }
     .contactList li:nth-child(5) { animation-delay: 0.65s; }
     .contactList li:nth-child(6) { animation-delay: 0.7s; }    
-    
     
     .list a{
         position: relative;
@@ -93,6 +93,7 @@
         transform-origin: bottom right;
         transition: transform 0.3s ease;
     }
+    
     .list a:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left; 

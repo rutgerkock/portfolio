@@ -3,7 +3,7 @@
     import { tweened } from 'svelte/motion';
     import { cubicOut } from 'svelte/easing';
 
-    export let main = false;  // Controls text visibility and animation
+    export let main = false; 
 
     let percentage;
 
@@ -106,6 +106,7 @@
         z-index: 997;
         width: 375px;
         height: 375px;
+        animation: activeMobile 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     }
 
     .inactive {
@@ -151,6 +152,19 @@
         }
     }
 
+    @keyframes activeMobile {
+        0% {
+            bottom: -20vh;
+            right: -25vh;
+            rotate: -90deg;
+        }
+        100% {
+            bottom: 0;
+            right: 0;
+            rotate: 0;
+        }
+    }
+
     @keyframes inactiveDesktop {
         0% {
             bottom: -42vw;
@@ -166,6 +180,21 @@
         }
     }
 
+    @keyframes activeDesktop {
+        0% {
+            right: -25vw;
+            top: 0;
+            width: 100vh;
+            height: 100vh;
+            rotate: -90deg;
+        }
+        100% {
+            bottom: -42vw;
+            width: 90vw;
+            height: 90vw;
+        } 
+    }
+
     @media (min-width: 768px) {
         text {
             opacity: 0; 
@@ -178,6 +207,7 @@
             bottom: -42vw;
             width: 90vw;
             height: 90vw;
+            animation: activeDesktop 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         }
 
         .inactive {
