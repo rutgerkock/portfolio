@@ -146,9 +146,9 @@
         100% {
             width: 375px;
             height: 375px;
-            bottom: -20vh;
-            right: -25vh;
             rotate: -90deg;
+            right: -160px;
+            bottom: -160px;
         }
     }
 
@@ -172,7 +172,7 @@
             height: 90vw;
         } 
         100% {
-            right: -25vw;
+            right: calc(-25vw + 10vh);
             top: 0;
             width: 100vh;
             height: 100vh;
