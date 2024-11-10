@@ -93,7 +93,7 @@
         transform-origin: bottom right;
         transition: transform 0.3s ease;
     }
-    
+
     .list a:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left; 
