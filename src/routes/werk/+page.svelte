@@ -1,7 +1,6 @@
 <script>
     import Circle from '../../lib/components/Circle.svelte';
     import Nav from '../../lib/components/Nav.svelte';
-    import Item from '$lib/components/Item.svelte';
 </script>
 
 <main class="werk">
@@ -13,7 +12,11 @@
     />
     <section>
         <ul class="werkList">
-            <Item title={"Project 1"}/>
+            <li><p>Project</p></li>
+            <li><p>Project</p></li>
+            <li><p>Project</p></li>
+            <li><p>Project</p></li>
+            <li><p>Project</p></li>
         </ul>
     </section>
 </main>
@@ -40,8 +43,23 @@
         margin-top: var(--padding-5);
         height: 60vh;
         overflow-y: scroll;
-        mask-image: linear-gradient(to bottom, black 80%, transparent);
     }
+
+    p {
+        font-size: var(--title-regular);
+        line-height: 1;
+    }
+
+    .werkList li {
+        opacity: 0;
+        animation: reveal 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    }
+
+    .werkList li:nth-child(1) {animation-delay: 0.45s;}
+    .werkList li:nth-child(2) {animation-delay: 0.50s;}
+    .werkList li:nth-child(3) {animation-delay: 0.55s;}
+    .werkList li:nth-child(4) {animation-delay: 0.60s;}
+    .werkList li:nth-child(5) {animation-delay: 0.65s;}
 
     @keyframes reveal {
         0% {
