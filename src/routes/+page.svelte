@@ -4,6 +4,7 @@
 </script>
 
 <main>
+    <p class="top_text">* Beschikbaar voor freelance werk</p>
     <h1>Rutger Kock</h1>
     <Circle main={true} />
     <Nav 
@@ -18,8 +19,17 @@
         text-wrap: wrap;
         font-size: 20vw;
         line-height: .9;
-        margin-top: var(--padding-3);
+        margin-top: var(--padding-5);
         animation: revealMobile 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    }
+
+    .top_text { 
+        position: absolute;
+        top: var(--padding-1);
+        left: var(--padding-1);
+        opacity: 0;
+        animation: textReveal 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        text-wrap: nowrap;
     }
 
     @keyframes revealMobile {
@@ -53,6 +63,26 @@
         }
     }
 
+    
+    @keyframes textReveal {
+        0% {
+            opacity: 0;
+            letter-spacing: -0.5em; 
+            margin-top: -200%;
+        }
+        80% {
+            opacity: 1;
+            letter-spacing: 0; 
+            margin-top: 0; 
+        }
+        100% {
+            opacity: 1;
+            letter-spacing: 0; 
+            margin-top: 0; 
+        }
+    }
+
+    
 
 
     @media (min-width: 768px) {
@@ -64,6 +94,10 @@
             animation: reveal 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
             opacity: 0; 
             letter-spacing: -0.5em; 
+        }
+
+        .top_text {
+            animation: textReveal 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         }
     }
 </style>
