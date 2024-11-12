@@ -17,7 +17,7 @@
         <ul class="werkList">
             <li>
                 <p class="blah">
-                    Projecten waar ik tijdens mijn opleiding aan de HvA aan heb gewerkt.
+                    Projecten waar ik tijdens mijn opleiding aan de HvA, zelfstandig of voor een opdrachtgever aan heb gewerkt.
                 </p>
             </li>
             {#each projects as project}
