@@ -25,7 +25,6 @@
     main {
         flex-direction: column;
         padding: var(--padding-2);
-        overflow-y: auto;
         padding-bottom: var(--padding-5);
     }
 
@@ -51,6 +50,8 @@
         flex-direction: column;
         gap: var(--padding-2);
         padding-top: var(--padding-2);
+        height: 45vh;
+        overflow-y: scroll;
     }
 
     ul li {
@@ -61,7 +62,7 @@
     ul li img {
         opacity: 0;
         width: 100%;
-        height: 100%;
+        height: auto;
         animation: reveal 1s 0.6s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     }
 
