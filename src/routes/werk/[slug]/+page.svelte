@@ -38,8 +38,6 @@
     
     section {
         margin-top: var(--padding-5);
-        max-height: 70vh;
-        overflow: scroll;
     }
 
     section p {
