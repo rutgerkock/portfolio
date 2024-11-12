@@ -21,7 +21,6 @@
         padding: var(--padding-2);
         flex-direction: column; 
         background-color: var(--highlight);
-        height: 500vh;
     }
 
     h1 {
