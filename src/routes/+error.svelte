@@ -1,5 +1,8 @@
 <script>
     import { page } from '$app/stores';
+    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
+    injectSpeedInsights();
 </script>
 
 <main>
