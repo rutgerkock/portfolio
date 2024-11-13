@@ -130,6 +130,5 @@
         .contactList a   {
             font-size: var(--title-regular);
         }
-
     }
 </style>
