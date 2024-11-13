@@ -7,7 +7,7 @@
 </script>
 
 <main>
-    <p class="top_text">* Beschikbaar voor freelance werk</p>
+    <p class="top_text">* Op zoek naar een frontend stage!</p>
     <h1>Rutger Kock</h1>
     <Circle main={true} />
     <Nav 

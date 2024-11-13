@@ -14,7 +14,8 @@
         link2={{ href: '/', name: 'Home' }} 
     />
     <section>
-        <ul class="werkList">
+        <p>Aan deze pagina wordt nog gewerkt :&#10091;</p>
+        <!-- <ul class="werkList">
             <li>
                 <p class="blah">
                     Projecten waar ik tijdens mijn opleiding aan de HvA, zelfstandig of voor een opdrachtgever aan heb gewerkt.
@@ -23,7 +24,7 @@
             {#each projects as project}
                 <li class="list"><a href="/werk/{project.id}">{project.title}</a></li>
             {/each}
-        </ul>
+        </ul> -->
     </section>
 </main>
 
@@ -36,6 +37,7 @@
     
     section {
         z-index: 998;
+        margin-top: var(--padding-5);
     }
 
     h1 {
@@ -44,7 +46,8 @@
         text-align: left;
     }
 
-    .werkList {
+
+    /* .werkList {
         margin-top: var(--padding-5);
     }
 
@@ -91,7 +94,7 @@
     .list a:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left; 
-    }
+    } */
 
     @keyframes reveal {
         0% {
@@ -112,7 +115,7 @@
     }
 
     @media (min-width: 768px) {
-        .werkList a   {
+        /* .werkList a   {
             font-size: var(--title-regular);
         }
 
@@ -122,7 +125,7 @@
 
         .blah { 
             max-width: 33rem;
-        }
+        } */
     }
 
 </style>
