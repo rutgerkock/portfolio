@@ -1,6 +1,9 @@
 <script>
     import Circle from '../lib/components/Circle.svelte';
     import Nav from '../lib/components/Nav.svelte';
+    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
+    injectSpeedInsights();
 </script>
 
 <main>
