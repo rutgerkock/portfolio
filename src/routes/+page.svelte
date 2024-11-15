@@ -35,7 +35,6 @@
         text-wrap: nowrap;
     }
 
-
     @keyframes revealMobile {
         0% {
             opacity: 0;
