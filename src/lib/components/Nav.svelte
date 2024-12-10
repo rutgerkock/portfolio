@@ -6,7 +6,7 @@
 <nav>
     <ul>
         <li><a href={link1.href}>{link1.name}</a></li>
-        <li><a href={link2.href}>{link2.name}</a></li>
+        // <li><a href={link2.href}>{link2.name}</a></li>
     </ul>
 </nav>
 
