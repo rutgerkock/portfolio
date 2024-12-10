@@ -20,7 +20,7 @@
                     Gespecialiseerd in dynamische, toegankelijke en geoptimaliseerde websites.
                 </p>
                 <p class="blah">
-                    Verder ook enthousiast over luchtgekoelde Porsches.
+                    Verder ook enthousiast over Volvo's.
                 </p>
             </li>
             <li class="list"><a href="mailto:kock.rutger@gmail.com" target="_blank">kock.rutger@gmail.com</a></li>
