@@ -1,6 +1,5 @@
 <script>
     export let link1 = { href: '/contact', name: 'Contact' };
-    export let link2 = { href: '/werk', name: 'Werk' };
 </script>
 
 <nav>
